@@ -1,0 +1,9 @@
+li a{
+    color:fuchsia;
+    font-family:system-ui;
+}
+body{
+    color:white;
+    background:white url("images/Krishna_playing_flute.jpg") no-repeat;
+    font-family:cursive;
+}

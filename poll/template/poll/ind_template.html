@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<link rel = "stylesheet" href="{% static 'poll/style.css' %}">
+	</head>
+	<body>
+		{% if latest_question_list %}
+			<ul>
+				{% for quest in latest_question_list %}
+					<li><a href = "{% url 'polling_app:details' quest.id %}">{{quest.question_text}}</a></li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<h2> No question's are available </h2>
+		{% endif %}
+	</body>
+</html>

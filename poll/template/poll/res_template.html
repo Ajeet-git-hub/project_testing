@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<link rel = "stylesheet" href="{% static 'poll/style.css' %}">
+	</head>
+	<body>
+		<ul>
+			<h2>Total votes in question</h2>
+			<h1>{{question.question_text}}</h1>
+			{% for choice in question.choice_set.all %}
+				<li>{{choice.choice_text}} ==> {{choice.votes}} vote{{choice.votes|pluralize}}</li>	
+			{% endfor %}
+		</ul>
+		<a href = "{% url 'polling_app:details' question.id %}">vote again!!</a>
+	</body>
+</html>
